@@ -1,0 +1,19 @@
+/* src/index.css */
+:root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+body { margin: 0; background: #f7f7fb; color: #111; }
+.container { max-width: 720px; margin: 40px auto; padding: 0 16px; }
+h1 { margin: 0 0 16px; }
+
+.todo-form { display: flex; gap: 8px; margin-bottom: 16px; }
+.todo-form input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 6px; }
+.todo-form button { padding: 10px 16px; border: none; border-radius: 6px; background: #111; color: #fff; cursor: pointer; }
+
+.todo-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.todo-item { display: flex; justify-content: space-between; align-items: center; background: #fff; border: 1px solid #eee; border-radius: 8px; padding: 10px 12px; }
+.todo-item label { display: flex; align-items: center; gap: 10px; }
+.todo-item .done { text-decoration: line-through; color: #777; }
+.todo-item .actions { display: flex; gap: 8px; }
+.todo-item button { border: 1px solid #ddd; background: #fafafa; padding: 6px 10px; border-radius: 6px; cursor: pointer; }
+.todo-item button:hover { background: #f0f0f0; }
+.todo-item button.danger { border-color: #e9b2b2; color: #a40000; }
+.edit-input { padding: 6px 8px; border: 1px solid #ddd; border-radius: 6px; }
