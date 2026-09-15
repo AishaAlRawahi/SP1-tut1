@@ -15,6 +15,14 @@ export async function createTodo(req, res, next) {
 
 export async function getTodos(req, res, next) {
   try {
+    const {done} = req.query;
+    const filter = {};
+    if (done == 'true'){
+      filter.done = true;
+    }
+    else{
+      filter.done = false;
+    }
     const todos = await Todo.find().sort({ createdAt: -1 });
     res.json(todos);
   } catch (err) { next(err); }
