@@ -8,11 +8,13 @@ import "./index.css";
 export default function App() {
   const [todos, setTodos] = useState([]);
   const [loading, setLoading] = useState(false);
-
+  const [filter, setFilter] = useState("all");
+  
   const loadTodos = useCallback(async () => {
     try {
       setLoading(true);
-      const { data } = await api.get("/todos");
+      const params = filter === "all" ? {} : { done: filter === "done" };
+      const { data } = await api.get("/todos", { params });
       setTodos(data);
     } catch (e) {
       console.error(e);
@@ -20,7 +22,7 @@ export default function App() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [filter]);
 
   useEffect(() => { loadTodos(); }, [loadTodos]);
 
